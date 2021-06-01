@@ -6,7 +6,6 @@ bot = commands.Bot(command_prefix='!!')
 
 @bot.command(name="character", help="Get a Cyberpunk 2020 character idea.")
 async def idea(ctx):
-    await ctx.send("You want a new character?")
     roles = ['Rocker', 'Tech', 'Medtech', 'Netrunner', 'Solo', 'Fixer', 'Nomad', 'Corporate', 'Cop']
     personalities = ['shy and secretive', 'rebellious, antisocial, and violent', 'arrogant, proud, and aloof', 'moody, rash, and headstrong', 'picky, fussy, and nervous', 'stable and serious', 'silly and fluffheaded', 'sneaky and deceptive', 'intellectual and detatched', 'friendly and outgoing']
     alliances = ['themself', 'a corporation', 'justice', 'money', 'power', 'fame', 'revenge', 'someone they love']
