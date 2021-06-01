@@ -5,9 +5,13 @@ Simply go to this link and add it to your server from there: https://discord.com
 
 ## Using the bot
 Use !! to call on the bot.
+
 `!!help`: Help page.
+
 `!!character`: Gives you a character idea.
+
 `!!printchar`: Prints a Cyberpunk 2020 character's information in an easy-to-read stat block.
+
 `!!printchar_red`: Prints a Cyberpunk Red character, as in `!!printchar`.
 
 ## License
