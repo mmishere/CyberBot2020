@@ -9,7 +9,7 @@ async def idea(ctx):
     roles = ['Rocker', 'Tech', 'Medtech', 'Netrunner', 'Solo', 'Fixer', 'Nomad', 'Corporate', 'Cop']
     personalities = ['shy and secretive', 'rebellious, antisocial, and violent', 'arrogant, proud, and aloof', 'moody, rash, and headstrong', 'picky, fussy, and nervous', 'stable and serious', 'silly and fluffheaded', 'sneaky and deceptive', 'intellectual and detatched', 'friendly and outgoing']
     alliances = ['themself', 'a corporation', 'justice', 'money', 'power', 'fame', 'revenge', 'someone they love']
-    idea = f"How about a {random.choice(roles)} who is {random.choice(personalities)} and lives for {random.choice(alliances)}?"
+    idea = f"A {random.choice(roles)} who is {random.choice(personalities)} and lives for {random.choice(alliances)}."
     await ctx.send(idea)
 
 @bot.command(name="printchar", help="Print a Cyberpunk 2020 character. Include name and stats, with spaces between. Spaces in name should be replaced with underscores.")
@@ -39,7 +39,7 @@ async def printchar(ctx, name: str, INT: int, REF: int, TECH: int, COOL: int, AT
         BTM = -5
     
     # derived stats
-    stat_str += f"Humanity [{EMP * 10}]\nRun [{MA * 3}] Leap [{(MA * 3) / 4}]\nLift [{BODY * 40}] Carry [{BODY * 10}]\nSAVE [{BODY}] BTM [{BTM}]"
+    stat_str += f"Humanity [{EMP * 10}]\nRun [{MA * 3}m] Leap [{(MA * 3) / 4}m]\nLift [{BODY * 40}kgs] Carry [{BODY * 10}kgs]\nSAVE [{BODY}] BTM [{BTM}]"
 
     # gear - use this? https://stackoverflow.com/questions/62377883/how-can-i-get-user-input-in-a-python-discord-bot
     stat_str += '```'
