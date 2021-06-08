@@ -10,9 +10,9 @@ Use !! to call on the bot.
 
 `!!character`: Gives you a character idea.
 
-`!!printchar`: Prints a Cyberpunk 2020 character's information in an easy-to-read stat block.
+`!!printchar`: Prints a Cyberpunk 2020 character's information in an easy-to-read stat block with derived stats automatically calculated. Write the character's name with underscores instead of spaces (if applicable), then add stats in the order listed with spaces between each number: INT REF TECH COOL ATTR LUCK MA BODY EMP
 
-`!!printchar_red`: Prints a Cyberpunk Red character, as in `!!printchar`.
+`!!printchar_red`: Prints a Cyberpunk Red character, as in `!!printchar`. Write the character's name with underscores instead of spaces, as in `!!printchar`, and add stats in this order: INT REF DEX TECH COOL WILL LUCK MOVE BODY EMP
 
 ## CyberBot2020 in action
 ![Character ideas](https://user-images.githubusercontent.com/70784810/121263137-cf097180-c87a-11eb-8240-01368db9ad01.png)
