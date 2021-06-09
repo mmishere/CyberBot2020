@@ -61,7 +61,7 @@ async def make2020(ctx, handle: str, role: str, INT: int, REF: int, TECH: int, C
 
 
 @bot.command(name="makered", help="Add a Cyberpunk Red character with the following fields: Character_Name Role INT REF DEX TECH COOL WILL LUCK MOVE BODY EMP")
-async def printred(ctx, name: str, INT: int, REF: int, DEX: int, TECH: int, COOL: int, WILL: int, LUCK: int, MOVE: int, BODY: int, EMP: int):
+async def makered(ctx, handle: str, role: str, INT: int, REF: int, DEX: int, TECH: int, COOL: int, WILL: int, LUCK: int, MOVE: int, BODY: int, EMP: int):
     # stats remain as integers to ensure that people don't put words in instead
     handle = format_handle(handle)
 
@@ -79,7 +79,7 @@ async def printred(ctx, name: str, INT: int, REF: int, DEX: int, TECH: int, COOL
     
     cursor.execute("INSERT INTO characters_red VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", (str(bot.user.id), handle, role, INT, REF, DEX, TECH, COOL, WILL, LUCK, MOVE, BODY, EMP,))
     await ctx.send("Character created! Printing stats...")
-    character_str = print_red(handle)
+    character_str = stat_str_red(handle)
     await ctx.send(character_str)
 
 
@@ -125,7 +125,7 @@ def stat_str_2020(handle: str) -> str:
 # helper function to make a stat block for a Red character in the database
 def stat_str_red(handle: str) -> str:
     id = bot.user.id
-    retrieved = cursor.execute("SELECT * FROM characters_red WHERE client=?", (id,)).fetchall()
+    retrieved = cursor.execute("SELECT * FROM characters_red WHERE client=? AND handle=?", (id,handle)).fetchall()
     character = retrieved[0] # the tuple
 
     role = character[2]
@@ -157,7 +157,7 @@ async def print2020(ctx, handle: str):
 
 
 @bot.command(name="printred", help="Print a Cyberpunk Red character that has already been added using !!makered. Add the name as a single word with underscores instead of spaces, like My_Character.")
-async def printred(ctx, handle: str, INT: int, REF: int, DEX: int, TECH: int, COOL: int, WILL: int, LUCK: int, MOVE: int, BODY: int, EMP: int):
+async def printred(ctx, handle: str):
     handle = format_handle(handle)
     character_str = stat_str_red(handle)
     await ctx.send(character_str)
